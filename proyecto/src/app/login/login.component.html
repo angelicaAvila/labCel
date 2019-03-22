@@ -1,6 +1,6 @@
 <ng-template #content let-modal>
   <div class="modal-header">
-    <p class="modal-title" id="modal-basic-title">Iniciar Sesion</p>
+    <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
      X </button>
   </div>
@@ -15,9 +15,9 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button>
   </div>
-</ng-template>
+</ng-template> 
 
-<button class="btn btn-primary" (click)="open(content)">Launch demo modal</button>
+<button class="btn btn-link" (click)="open(content)">Login</button>
 
