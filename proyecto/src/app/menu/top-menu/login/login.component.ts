@@ -1,15 +1,17 @@
 import {Component} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  //styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,private router: Router) {}
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -28,4 +30,6 @@ export class LoginComponent {
       return  `with: ${reason}`;
     }
   }
+
+
 }
