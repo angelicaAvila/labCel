@@ -14,7 +14,7 @@ import { ProductsComponent } from './dashboard/products/products.component';
     AppComponent,
     LoginComponent,
     TopMenuComponent,
-    routingComponents
+    routingComponents,
     DashboardComponent,
     ProductsComponent
   ],
