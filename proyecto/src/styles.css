@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.menu{
+    background-color: #24598E !important;
+}
+.button-link{
+    color: #BEFF7A !important;
+}
+
+.item{
+
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #179275;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: #1EA29B;
+    font-weight: bold;
+}
+.section{
+    display: inline-block;
+    text-align: center;
+}
+.productData{
+    font-size: 13px !important;
+    font-weight: 400;
+    color: #24598E;
+    margin-bottom: 3px;
+}
