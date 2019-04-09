@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.css']
 })
-export class InicioComponent implements OnInit {
+export class LogoutComponent implements OnInit {
 
   constructor(private router: Router) { 
     
