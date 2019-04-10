@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
 import {FormsModule} from '@angular/forms';
+import { Routes } from '@angular/router'
+
 
 @NgModule({
   declarations: [
