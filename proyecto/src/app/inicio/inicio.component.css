@@ -8,6 +8,7 @@ ul {
   
   li {
     float: left;
+    height: 45px;
   }
   
   li a {

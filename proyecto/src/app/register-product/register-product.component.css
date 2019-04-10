@@ -1,0 +1,11 @@
+.container {
+    background:rgba(22, 123, 223, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    width:609px;
+    display: flex;  
+    flex-direction: column;
+  }
+
+
+  
