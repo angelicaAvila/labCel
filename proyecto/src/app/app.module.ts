@@ -8,6 +8,9 @@ import { TopMenuComponent } from './menu/top-menu/top-menu.component';
 import { LogoutComponent } from './menu/top-menu/logOut/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './dashboard/products/products.component';
+import { Routes } from '@angular/router'
+
+
 
 @NgModule({
   declarations: [

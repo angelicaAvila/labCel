@@ -15,9 +15,16 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button>        
+    <a href="/home">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button>
+    </a>
   </div>
 </ng-template>
 
-<button class="btn button-link" (click)="open(content)">Login</button>
 
+<ul class="menu">
+  <li><a>
+    <button class="btn button-link" (click)="open(content)">Login
+    </button></a>
+  </li>
+</ul>
