@@ -26,8 +26,9 @@
     margin-bottom: 3px;
 }
 form{
-background-color:#296AAB;
-border:solid black 1px
+    background-color:#296AAB;
+    border:solid black 1px;
+    padding: 15px;
 }
 .form{
     width:550px;
