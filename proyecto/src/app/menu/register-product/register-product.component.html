@@ -1,0 +1,43 @@
+
+<div class="container">
+
+    <form method="POST" class="form" (ngSubmit)="submit()">
+        <h1>Registro producto</h1>
+            <div class="col-sm-10">
+          <div class="form-group">
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" class="form-control" id="txtNombre" name="txtNombre" [(ngModel)]="model.nombre"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtPrecioP">Precio publico:</label>
+              <input type="number" class="form-control" id="txtPrecioP" name="txtPrecioP" [(ngModel)]="model.precioPublico"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtPrecioM">Precio mayoreo:</label>
+              <input type="number" class="form-control" class="form-control" id="txtPrecioM" name="txtPrecioM" [(ngModel)]="model.precioMayoreo"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtCosto">Costo:</label>
+              <input type="number" class="form-control" id="txtCosto" name="txtCosto" [(ngModel)]="model.costo"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtCategoria">Categoria:</label>
+              <input type="text" class="form-control" id="txtCategoria" name="txtCategoria" [(ngModel)]="model.categoria"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtMarca">Marca:</label>
+              <input type="text" class="form-control" id="txtMarca" name="txtMarca" [(ngModel)]="model.marca"/>
+          </div>
+
+          <div class="form-group">
+              <button type="submit" class="form-control" id="buttonID" class="btn btn-primary">Guardar</button>
+
+          </div>
+        </div>
+    </form>
+</div>
