@@ -13,10 +13,9 @@ export class LogoutComponent implements OnInit {
     
   }
 
-  salir(){
+  /*salir(){
     this.router.navigateByUrl('/');
-  }
-
+  }*/
   ngOnInit() {
     
   }
