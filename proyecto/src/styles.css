@@ -29,3 +29,7 @@ form{
 background-color:#296AAB;
 border:solid black 1px
 }
+.form{
+    width:550px;
+    margin-top:50px;
+}
