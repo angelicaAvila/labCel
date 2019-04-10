@@ -1,30 +1,32 @@
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-     X </button>
-  </div>
-  <div class="modal-body">
-    <div class="form-group">
-      Usuario: <br>
-      <input type="text" name="Username">
+  <form>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        X </button>
     </div>
-    <div>
-      Contrasena: <br>
-      <input type="password" name="Password">
+    <div class="modal-body">
+      <div class="form-group">
+        Usuario: <br>
+        <input type="text" name="Username">
+      </div>
+      <div>
+        Contrasena: <br>
+        <input type="password" name="Password">
+      </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <a href="/home">
-      <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button>
-    </a>
-  </div>
+    <div class="modal-footer">
+      <a href="/home">
+        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button>
+      </a>
+    </div>
+  </form>
 </ng-template>
 
 
 <ul class="menu">
   <li><a>
-    <button class="btn button-link" (click)="open(content)">Login
+    <button class="btn button-link" (click)="open(content)">Entrar
     </button></a>
   </li>
 </ul>

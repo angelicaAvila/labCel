@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InicioComponent } from './Inicio/inicio.component';
 import { RegisterProductComponent } from './menu/register-product/register-product.component';
 import { RegisterUserComponent } from './menu/register-user/register-user.component';
 import { LoginComponent } from './menu/top-menu/login/login.component';
