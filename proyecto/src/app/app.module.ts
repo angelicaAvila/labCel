@@ -11,7 +11,8 @@ import { ProductsComponent } from './dashboard/products/products.component';
 import { RegisterProductComponent } from './menu/register-product/register-product.component';
 import { RegisterUserComponent } from './menu/register-user/register-user.component';
 import { FormsModule } from '@angular/forms';
-import { Routes } from '@angular/router'
+import { Routes } from '@angular/router';
+import { SearchComponent } from './dashboard/search/search.component'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Routes } from '@angular/router'
     DashboardComponent,
     ProductsComponent,
     RegisterProductComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    SearchComponent
   ],
   imports: [
     NgbModule,
