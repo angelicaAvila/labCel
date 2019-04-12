@@ -1,34 +1,29 @@
-<div class = "container" style="width:550px" >
-    <div align="right" style="margin-top:80px">
-        <a href="#" ng-click="searchUser()"></a>
-    </div>
-    <div>
-        <form role = "form" class="well" ng-hide="ifSearchUser"  >
-            <h2 style="margin-top:0">Registro de usuarios</h2>
-            <div class = "form-group">
-                <label for = "name"> Nombre:  </label>
-                <input type = "text" id = "name" class = "form-control" placeholder = "Nombre de usuario " ng-model = "newcontact.username">
+<app-logout></app-logout>
+<div class = "container form" >
+    <a ng-click="searchUser()"></a>
+    <form role = "form" class="form" ng-hide="ifSearchUser">
+        <h2>Registro de usuarios</h2>
+        <div class = "form-group">
+            <label for = "name"> Nombre:  </label>
+            <input type = "text" id = "name" class = "form-control" placeholder = "Nombre de usuario " ng-model = "newcontact.username">
+        </div>
+        <div class = "form-group">
+            <label for = "password"> Contraseña:  </label>
+            <input type = "password" id = "password" class = "form-control" placeholder = "Contraseña " ng-model = "newcontact.password">
+        </div>
+        <div class="form-group">
+            <label> Tipo de usuario:  </label>
+            <div class = "radio">
+                <label><input type="radio" name="type" id="admin" ng-model = "newcontact.type">Administrador</label>
+                <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
             </div>
-            <div class = "form-group">
-                <label for = "password"> Contraseña:  </label>
-                <input type = "password" id = "password" class = "form-control" placeholder = "Contraseña " ng-model = "newcontact.password">
+            <div class="radio">
+                <label><input type="radio" name="type" id="regular"  ng-model = "newcontact.type">Regular</label>
+                <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
             </div>
-            <div class="form-group">
-                <label> Tipo de usuario:  </label>
-                <div class = "radio">
-                    <label><input type="radio" name="type" id="admin" ng-model = "newcontact.type">Administrador</label>
-                    <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="type" id="regular"  ng-model = "newcontact.type">Regular</label>
-                    <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
-                </div>
-            </div>
-
-
-            <br>
-            <input type="hidden" ng-model="newcontact.id">
-            <input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
-        </form>
-    </div>
+        </div>
+        <br>
+        <input type="hidden" ng-model="newcontact.id">
+        <input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
+    </form>
 </div>
