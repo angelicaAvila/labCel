@@ -1,0 +1,22 @@
+<div>
+  <div *ngFor = "let item of items" class="col-lg-3 col-md-5 col-sm-5 item">
+    <div >
+      <img src="{{item.imagen}}" >
+      <p>{{item.nombre}}</p>
+      <div>
+        <p class="productData">{{item.stock}} unidades en stock</p>
+        <p class="productData">Precio Unitario: ${{item.precioPublico}}</p>
+        <p class="productData">Precion Mayoreo: ${{item.precioMayoreo}}</p>
+        <a [routerLink]="['/items/edit',item.idProducto]" (click)="editItem(item.idProducto)">
+          <img src="assets\edit.png">
+        </a>
+      </div>
+      <!--
+      <p>{{product.inventario}}</p>
+      <p>{{product.descripcion}}</p>
+      <p>{{product.descripcion}}</p> -->
+    </div>
+  </div>
+</div>
+
+
