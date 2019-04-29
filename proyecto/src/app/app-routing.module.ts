@@ -6,12 +6,14 @@ import { LoginComponent } from './menu/top-menu/login/login.component';
 import { LogoutComponent } from './menu/top-menu/logOut/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
+import { EditProductComponent } from './menu/edit-product/edit-product.component'
 
 const routes: Routes = [
   {path: 'register-product', component: RegisterProductComponent},
   {path: 'register-user', component: RegisterUserComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: DashboardComponent},
+  {path: 'edit-product', component: EditProductComponent},
   {path: '', component: LoginComponent}
 ];
 

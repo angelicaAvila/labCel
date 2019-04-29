@@ -34,3 +34,14 @@ form{
     width:550px;
     margin-top:50px;
 }
+.container {
+    border-radius: 5px;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    width:609px;
+    display: flex;
+    flex-direction: column;
+}
+
+.final-button{
+    float: right;
+}
