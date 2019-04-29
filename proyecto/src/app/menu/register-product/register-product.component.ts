@@ -10,16 +10,11 @@ export class RegisterProductComponent implements OnInit {
 
   constructor() { }
 
-  //model: Producto= new Producto();
-  @Output() onsubmit = new EventEmitter<any>();
-/*
-  public submit(){
-    this.onsubmit.emit(this.model);
-    console.log(this.model);
-    this.model= new Producto();
-  }*/
-
   ngOnInit() {
+  }
+
+  saveData(){
+    //Aqui se crea un json y se llama al dataService
   }
 
 }

@@ -12,4 +12,9 @@ export class RegisterUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveContact(){
+
+  }
+
+
 }

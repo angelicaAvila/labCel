@@ -7,9 +7,10 @@
         <p class="productData">X unidades en stock</p>
         <p class="productData">Precio Unitario: $9.99</p>
         <p class="productData">Precion Mayoreo: $0.00</p>
-        <a href="/edit-product">
-          <button class="btn"><img src="assets\edit.png">
-        </button></a>
+        <a routerLink="/edit-product/{{product.nombre}}" >
+            <button onclick="editProduct(product.nombre)" class="btn"><img src="assets\edit.png">
+            </button>
+        </a>
         <button class="btn"><img src="assets\Minus.png"></button>
         <button class="btn"><img src="assets\shoppingcart.png"></button>
       </div>

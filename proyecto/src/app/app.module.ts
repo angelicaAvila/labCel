@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http'
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './menu/top-menu/login/login.component';
@@ -33,6 +34,7 @@ import { EditProductComponent } from './menu/edit-product/edit-product.component
   imports: [
     NgbModule,
     BrowserModule,
+    HttpModule,
     AppRoutingModule,
     FormsModule
   ],

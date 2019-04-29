@@ -1,29 +1,25 @@
 <app-logout></app-logout>
+
 <div class = "container form" >
-    <a ng-click="searchUser()"></a>
-    <form  class="form" ng-hide="ifSearchUser">
+    <form method = "POST" class = "form" (ngSubmit) = "submit()">
         <h2>Registro de usuarios</h2>
         <div class = "form-group">
             <label for = "name"> Nombre:  </label>
-            <input type = "text" id = "name" class = "form-control" placeholder = "Nombre de usuario " ng-model = "newcontact.username">
+            <input type = "text" id = "name" class = "form-control" placeholder = "Nombre de usuario " >
         </div>
         <div class = "form-group">
             <label for = "password"> Contraseña:  </label>
-            <input type = "password" id = "password" class = "form-control" placeholder = "Contraseña " ng-model = "newcontact.password">
+            <input type = "password" id = "password" class = "form-control" placeholder = "Contraseña " >
         </div>
-        <div class="form-group">
+        <div class = "form-group">
             <label> Tipo de usuario:  </label>
             <div class = "radio">
-                <label><input type="radio" name="type" id="admin" ng-model = "newcontact.type">Administrador</label>
-                <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
+                <label><input type = "radio" name = "type" id = "admin" >Administrador</label>
             </div>
-            <div class="radio">
-                <label><input type="radio" name="type" id="regular"  ng-model = "newcontact.type">Regular</label>
-                <!-- <input type = "radio" id = "admin"  value = "Administrador " ng-model = "newcontact.type"> -->
+            <div class = "radio">
+                <label><input type = "radio" name = "type" id = "regular" >Regular</label>
             </div>
         </div>
-        <br>
-        <input type="hidden" ng-model="newcontact.id">
-        <input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
+        <button type = "submit" class = "form-control btn btn-primary" id = "buttonID" ng-click = "saveContact()">Guardar</button>
     </form>
 </div>
