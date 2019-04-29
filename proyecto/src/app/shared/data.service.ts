@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 @Injectable()
 
 export class dataService{
-    constructor (private Http: http){}
+    constructor (){}
 
     storeData(){
        // this.http.post('https://labcel-e45e9.firebaseio.com/product.json');
