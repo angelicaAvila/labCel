@@ -1,0 +1,35 @@
+<ng-template #content let-modal>
+  <form>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        X </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        Usuario: <br>
+        <input type="text" name="username" [(ngModel)] ="username">
+      </div>
+      <div>
+        Contrasena: <br>
+        <input type="password" name="password" [(ngModel)]="password">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <!-- <a routerLink="/home"> -->
+        <!-- <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Entrar</button> -->
+        <button type="button" class="btn btn-primary" (click)="Login(); modal.close()">Entrar</button>
+      <!-- </a> -->
+
+      
+    </div>
+  </form>
+</ng-template>
+
+
+<ul class="menu">
+  <li><a>
+    <button class="btn button-link" (click)="open(content)">Entrar
+    </button></a>
+  </li>
+</ul>

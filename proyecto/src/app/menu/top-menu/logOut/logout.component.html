@@ -1,0 +1,27 @@
+<ul class="menu">
+    <li><a  routerLink="/home">
+        <button class="btn button-link">Home
+        </button></a>  
+    </li>
+    <li><a routerLink="/register-product" >
+        <button class="btn button-link" >New Product
+        </button></a>
+    </li>
+    <li><a routerLink="/register-user">
+        <button class="btn button-link">New User
+        </button></a>
+    </li>
+
+    <li><a style="position: absolute; right: 0" href="/login">
+        <button class="btn button-link" (click)="salir()">Salir
+        </button></a>
+    </li>
+</ul>
+<!-- *ngIf="authService.logIn" -->
+
+<!-- <ul>
+  <li><a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>  </li>
+  <li><a class="nav-link" routerLink="profile" routerLinkActive="active" *ngIf="authService.logIn">Profile</a>  </li>
+  <li style="float:right" > <a class="nav-link"  style="float:right" routerLink="login" routerLinkActive="active" *ngIf="!authService.logIn">Login</a> </li>
+  <li style="float:right" > <a class ="nav-link" (click)="logout()" href="#" *ngIf="authService.logIn">Logout</a>  </li>
+</ul> -->
