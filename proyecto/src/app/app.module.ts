@@ -18,7 +18,6 @@ import { RegisterProductComponent } from './menu/register-product/register-produ
 import { RegisterUserComponent } from './menu/register-user/register-user.component';
 import { SearchComponent } from './dashboard/search/search.component';
 import { EditProductComponent } from './menu/edit-product/edit-product.component';
-import { DataService } from './shared/data.service';
 import { ProductService } from './shared/product.service';
 //import { userService } from './shared/user.service';
 

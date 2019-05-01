@@ -11,11 +11,12 @@ export class ProductService{
     API_URI = 'https://labcel-e45e9.firebaseio.com/';
     constructor(private http: Http){}
 
-    getProductsFromDB(){
-        this.http.get(this.API_URI + '/products.json')
+    getProductsFromDB(data: String){
+        this.http.get(this.API_URI + 'products.json')
         .map(
         (response: Response) => {
           const products: Product[] = response.json();
+          console.log(response.json());
           return products;
         }
       )
@@ -36,15 +37,15 @@ export class ProductService{
     }
 
     updateItem(id:string|number, updatedItem:Product){
-        return this.http.put(`${this.API_URI}/product/${id}`,updatedItem);
+        return this.http.put(`${this.API_URI}product/${id}`,updatedItem);
     }
 
     getProductfromDB(id: string){
-        return this.http.get(`${this.API_URI}/item/${id}`);
+        return this.http.get(`${this.API_URI}item/${id}`);
     }
     
     deleteItem(id:string){
-          return this.http.delete(`${this.API_URI}/item/${id}`);
+          return this.http.delete(`${this.API_URI}item/${id}`);
     }
 
     setProducts(products: Product[]){
@@ -57,7 +58,7 @@ export class ProductService{
         return this.products[id];
     }
     saveItem(user: Product){
-        return this.http.post(`${this.API_URI}/product`,user);
+        return this.http.post(`${this.API_URI}product`,user);
     }
     
 }

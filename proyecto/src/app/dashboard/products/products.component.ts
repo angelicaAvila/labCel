@@ -3,7 +3,6 @@ import { ProductService } from 'src/app/shared/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/shared/product.model';
-import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-products',
@@ -15,16 +14,11 @@ export class ProductsComponent implements OnInit {
      products: Product[];
      //subscription: Subscription;
 
-  constructor( private dataService: DataService, 
-               private productService: ProductService) {
+  constructor( private productService: ProductService) {
    }
 
   ngOnInit() {
     
   }
 
-
-  /*ngOnDestroy(){
-       this.subscription.unsubscribe();
-  }*/
 }

@@ -8,6 +8,8 @@ import { ProductService } from 'src/app/shared/product.service';
 })
 export class SearchComponent implements OnInit {
 
+  text: String;
+
   constructor(private productService: ProductService) { 
   }
 
@@ -15,7 +17,7 @@ export class SearchComponent implements OnInit {
   }
 
   search(){
-    this.productService.getProducts();
+    this.productService.getProductsFromDB(this.text);
   }
 
 }

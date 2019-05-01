@@ -9,14 +9,24 @@ import { Product } from 'src/app/shared/product.model';
   styleUrls: ['./register-product.component.css']
 })
 export class RegisterProductComponent implements OnInit {
-  product: Product;
+  
   constructor(  private productService: ProductService, 
                 private activateRoute: ActivatedRoute,
                 private route: Router) { 
   }
-
+  product: any = {
+    idProducto: 0,
+    nombre: '',
+    stock: 0,
+    precioPublico: 0,
+    precioMayoreo: 0,
+    costo: 0,
+    categoria: '',
+    marca: '',
+    imagen: ''
+  };
+  
   ngOnInit() {
-
   }
 
   saveProduct(){
