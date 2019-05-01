@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor = "let product of myProducts" class="col-lg-3 col-md-5 col-sm-5 item">
+  <div *ngFor = "let product of products" class="col-lg-3 col-md-5 col-sm-5 item">
     <div >
       <img src="assets\image.png">
       <p>{{product.nombre}}</p>
@@ -7,7 +7,7 @@
         <p class="productData">X unidades en stock</p>
         <p class="productData">Precio Unitario: $9.99</p>
         <p class="productData">Precion Mayoreo: $0.00</p>
-        <a routerLink="/edit-product/{{product.nombre}}" >
+        <a routerLink="/{{product.nombre}}/edit-product" >
             <button onclick="editProduct(product.nombre)" class="btn"><img src="assets\edit.png">
             </button>
         </a>

@@ -1,34 +1,45 @@
 <app-logout></app-logout>
+<div class="container form" >
+    <form class="form" >
+        <h1>Registro producto</h1>
+          <div class="form-group">
+            <label for="txtNombre">Nombre:</label>
+            <input type="text" class="form-control" id="txtNombre" name="txtNombre" [(ngModel)]="product.nombre"/>
+          </div>
+          <div class="form-group">
+              <label for="txtPrecioP">Precio publico:</label>
+              <input type="number" class="form-control" id="txtPrecioP" name="txtPrecioP" [(ngModel)]="product.precio"/>
+          </div>
 
-<div class = "container form" >
-    <form method = "POST" class = "form" (ngSubmit) = "submit()">
-        <h2>Registro de producto</h2>
-        <div class = "form-group">
-            <label for = "txtNombre">Nombre:</label>
-            <input type = "text" class = "form-control" id = "txtNombre" name = "txtNombre" />
+          <div class="form-group">
+              <label for="txtPrecioM">Precio mayoreo:</label>
+              <input type="number" class="form-control"id="txtPrecioM" name="txtPrecioM" [(ngModel)]="product.precioMayoreo"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtCosto">Costo:</label>
+              <input type="number" class="form-control" id="txtCosto" name="txtCosto" [(ngModel)]="product.costo"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtCategoria">Categoria:</label>
+              <input type="text" class="form-control" id="txtCategoria" name="txtCategoria" [(ngModel)]="product.categoria"/>
+          </div>
+
+          <div class="form-group">
+              <label for="txtMarca">Marca:</label>
+              <input type="text" class="form-control" id="txtMarca" name="txtMarca" [(ngModel)]="product.marca"/>
+          </div>
+
+          <div class="form-group">
+            <label for="txtCantidad">Cantidad:</label>
+            <input type="number" class="form-control" id="txtCantidad" name="txtCantidad" [(ngModel)]="product.stock"/>
         </div>
-        <div class = "form-group">
-            <label for = "txtPrecioP">Precio publico:</label>
-            <input type = "number" class = "form-control" id = "txtPrecioP" name = "txtPrecioP" />
+
+        <div class="form-group">
+            <label for="txtImagen">Imagen:</label>
+            <input type="url" class="form-control" id="txtImagen" name="txtImagen" [(ngModel)]="product.imagen"/>
         </div>
-        <div class = "form-group">
-            <label for = "txtPrecioM">Precio mayoreo:</label>
-            <input type = "number" class = "form-control" class = "form-control" id="txtPrecioM" name = "txtPrecioM" />
-        </div>
-        <div class = "form-group">
-            <label for = "txtCosto">Costo:</label>
-            <input type = "number" class = "form-control" id = "txtCosto" name = "txtCosto" />
-        </div>
-        <div class = "form-group">
-            <label for = "txtCategoria">Categoria:</label>
-            <input type = "text" class = "form-control" id = "txtCategoria" name = "txtCategoria" />
-        </div>
-        <div class = "form-group">
-            <label for = "txtMarca">Marca:</label>
-            <input type = "text" class="form-control" id = "txtMarca" name = "txtMarca" />
-        </div>
-        <a routerLink = "/home">
-            <button type = "submit" class = "form-control btn btn-primary" id = "buttonID" ng-click = "saveContact()">Guardar</button>
-        </a>
-    </form>s
+        <button id="buttonID" class=" btn btn-primary" (click)="edit ? editItem() : saveItem()" >Guardar</button>
+    </form>
 </div>
