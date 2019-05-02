@@ -8,21 +8,20 @@
     <div class = "modal-body">
       <div class  =  "form-group">
         Usuario: <br>
-        <input type = "text" name = "Username">
+        <input type = "text" name = "username" id="username" ngModel class="form-control">
       </div>
       <div>
         Contrasena: <br>
-        <input type = "password" name = "Password">
+        <input type = "password" name = "Password" id="password" ngModel class="form-control">
       </div>
     </div>
     <div class = "modal-footer">
       <a routerLink = "/home">
-        <button type = "button" class = "btn btn-primary" (click) = "modal.close('Save click')">Entrar</button>
+        <button type = "submit" class = "btn btn-primary" (click) = "modal.close('Save click')" [disabled]="!f.valid">Entrar</button>
       </a>
     </div>
   </form>
 </ng-template>
-
 
 <ul class = "menu">
   <li><a>

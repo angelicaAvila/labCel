@@ -12,7 +12,6 @@ import { Product } from 'src/app/shared/product.model';
 export class ProductsComponent implements OnInit {
      @Input() index: number;
      products: Product[];
-     //subscription: Subscription;
 
   constructor( private productService: ProductService) {
    }

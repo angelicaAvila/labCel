@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,24 +13,16 @@ import { RouterModule } from '@angular/router';
 export class LoginComponent {
   closeResult: string;
 
-  constructor(private modalService: NgbModal,private router: Router) {}
+  constructor(private router: Router,
+              private authService: AuthService) {}
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+  ngOnInit() {
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  onSignin(form: NgForm) {
+    const email = form.value.email;
+    const password = form.value.password;
+    this.authService.signinUser(email, password);
   }
 
 

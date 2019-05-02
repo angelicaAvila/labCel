@@ -4,10 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { Routes } from '@angular/router';
-import {JwtModule} from '@auth0/angular-jwt';
-import {AuthGuardService} from './guards/auth-guard.service'; 
-
+import { AuthGuard } from './auth/auth-guard.service'; 
+import { AuthService } from './auth/auth.service';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './menu/top-menu/login/login.component';
 import { LogoutComponent } from './menu/top-menu/logout/logout.component';
@@ -40,17 +38,9 @@ import { ProductService } from './shared/product.service';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    FormsModule,
-    JwtModule.forRoot({
-      config:{
-        tokenGetter: function tokenGetter(){
-          return localStorage.getItem('access_token');},
-          whitelistedDomains: ['https://localhost:4200'],
-          blacklistedRoutes: ['https://localhost:4200/api/auth']
-        }
-      })  
+    FormsModule 
   ],
-  providers: [/*userService,*/ ProductService],
+  providers: [/*userService,*/ ProductService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

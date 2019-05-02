@@ -3,16 +3,23 @@ import { Subject } from 'rxjs/Subject';
 import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 import { Product } from './product.model';
+import { AuthService } from '../auth/auth.service';
+import { ProductsComponent } from '../dashboard/products/products.component';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ProductService{
     productChanged = new Subject<Product[]>();
     private products: Product[];
     API_URI = 'https://labcel-e45e9.firebaseio.com/';
-    constructor(private http: Http){}
+    constructor(private http: Http, 
+                private authService: AuthService,
+                private product: ProductsComponent,
+                private route: Router){}
 
     getProductsFromDB(data: String){
-        this.http.get(this.API_URI + 'products.json')
+        const token = this.authService.getToken();
+        this.http.get(this.API_URI + 'products.json?auth='+ token)
         .map(
         (response: Response) => {
           const products: Product[] = response.json();
@@ -28,12 +35,21 @@ export class ProductService{
     }
 
     saveProductToDB(product: Product){
-        this.http.post(this.API_URI, product)
+        const token = this.authService.getToken();
+        this.http.post(this.API_URI + 'products.json?auth=' + token, product)
         .map(
             (response: Response) => {
                 console.log (response.json);
+                const res = response.json;
+                return res;
             }
-        );
+        ).subscribe(
+            res=>{
+              console.log(res);
+              this.route.navigate(['/home']);
+            },
+            err => console.log(err)
+          );
     }
 
     updateItem(id:string|number, updatedItem:Product){
@@ -49,16 +65,13 @@ export class ProductService{
     }
 
     setProducts(products: Product[]){
-        this.products = products;
+        this.product.products = products;
     }
     getProducts(){
         return this.products.slice();
     }
     getProduct(id: number){
         return this.products[id];
-    }
-    saveItem(user: Product){
-        return this.http.post(`${this.API_URI}product`,user);
     }
     
 }

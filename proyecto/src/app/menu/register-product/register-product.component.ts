@@ -25,20 +25,13 @@ export class RegisterProductComponent implements OnInit {
     marca: '',
     imagen: ''
   };
-  
+
   ngOnInit() {
   }
 
   saveProduct(){
     delete this.product.id;
-
-    this.productService.saveItem(this.product).subscribe(
-      res=>{
-        console.log(res);
-        this.route.navigate(['/home']);
-      },
-      err => console.log(err)
-    );
+    this.productService.saveProductToDB(this.product);
   }
 
   editItem(){
