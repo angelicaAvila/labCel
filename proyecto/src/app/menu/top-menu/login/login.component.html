@@ -1,31 +1,20 @@
-<ng-template #content let-modal>
-  <form>
-    <div class = "modal-header">
-      <h4 class = "modal-title" id = "modal-basic-title">Iniciar Sesion</h4>
-      <button type = "button" class = "close" aria-label = "Close" (click) = "modal.dismiss('Cross click')">
-        X </button>
-    </div>
-    <div class = "modal-body">
-      <div class  =  "form-group">
-        Usuario: <br>
-        <input type = "text" name = "username" id="username" ngModel class="form-control">
-      </div>
-      <div>
-        Contrasena: <br>
-        <input type = "password" name = "Password" id="password" ngModel class="form-control">
-      </div>
-    </div>
-    <div class = "modal-footer">
-      <a routerLink = "/home">
-        <button type = "submit" class = "btn btn-primary" (click) = "modal.close('Save click')" [disabled]="!f.valid">Entrar</button>
-      </a>
-    </div>
-  </form>
-</ng-template>
-
-<ul class = "menu">
-  <li><a>
-    <button class = "btn button-link" (click) = "open(content)">Entrar
-    </button></a>
-  </li>
-</ul>
+<app-top-menu></app-top-menu>
+<div>
+  <div class="col-md-2 col-lg-3"></div>
+  <div class="container form col-md-8 col-lg-6">
+    <form (ngSubmit)="onSignin(f)" #f="ngForm" class = "form">
+        <h4>Iniciar Sesion</h4>
+        <div class  =  "form-group">
+          Usuario: <br>
+          <input type = "text" name = "username" id="username" ngModel class="form-control">
+        </div>
+        <div class  =  "form-group">
+          Contrasena: <br>
+          <input type = "password" name = "Password" id="password" ngModel class="form-control">
+        </div>
+        <a routerLink = "/home">
+          <button type = "submit" class = "btn btn-primary final-button" [disabled]="!f.valid">Entrar</button>
+        </a>
+    </form>
+  </div>
+</div>

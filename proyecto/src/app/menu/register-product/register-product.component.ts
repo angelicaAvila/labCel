@@ -30,7 +30,7 @@ export class RegisterProductComponent implements OnInit {
   }
 
   saveProduct(){
-    delete this.product.id;
+    delete this.product.idProducto;
     this.productService.saveProductToDB(this.product);
   }
 

@@ -7,8 +7,11 @@
         <button class="btn button-link">New User
         </button></a>
     </li>
+    
     <li><a style="position: absolute; right: 0" routerLink="/login">
-        <button class="btn button-link" (click)="salir()">Salir
+        <button class="btn button-link" 
+        (click)="onLogout()"
+        *ngIf="authService.isAuthenticated()">Salir
         </button></a>
     </li>
 </ul>

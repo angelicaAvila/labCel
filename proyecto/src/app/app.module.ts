@@ -17,6 +17,8 @@ import { RegisterUserComponent } from './menu/register-user/register-user.compon
 import { SearchComponent } from './dashboard/search/search.component';
 import { EditProductComponent } from './menu/edit-product/edit-product.component';
 import { ProductService } from './shared/product.service';
+import { FrontPageComponent } from './dashboard/front-page/front-page.component';
+import { HomeComponent } from './dashboard/home/home.component';
 //import { userService } from './shared/user.service';
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ProductService } from './shared/product.service';
     RegisterProductComponent,
     RegisterUserComponent,
     SearchComponent,
-    EditProductComponent
+    EditProductComponent,
+    FrontPageComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule,

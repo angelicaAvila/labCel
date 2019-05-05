@@ -1,7 +1,6 @@
 <app-logout></app-logout>
-
 <div class = "container form" >
-    <form method = "POST" class = "form" (ngSubmit) = "submit()">
+    <form class = "form" (ngSubmit)="onSignin(f)" #f="ngForm">
         <h2>Registro de usuarios</h2>
         <div class = "form-group">
             <label for = "name"> Nombre:  </label>
@@ -20,6 +19,6 @@
                 <label><input type = "radio" name = "type" id = "regular" >Regular</label>
             </div>
         </div>
-        <button type = "submit" class = "form-control btn btn-primary" id = "buttonID" ng-click = "saveContact()">Guardar</button>
+        <button class = "form-control btn btn-primary final-button" type="submit" [disabled]="!f.valid">Guardar</button>
     </form>
 </div>

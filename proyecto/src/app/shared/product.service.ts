@@ -4,7 +4,6 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 import { Product } from './product.model';
 import { AuthService } from '../auth/auth.service';
-import { ProductsComponent } from '../dashboard/products/products.component';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -14,13 +13,12 @@ export class ProductService{
     API_URI = 'https://labcel-e45e9.firebaseio.com/';
     constructor(private http: Http, 
                 private authService: AuthService,
-                private product: ProductsComponent,
                 private route: Router){}
 
     getProductsFromDB(data: String){
-        const token = this.authService.getToken();
-        this.http.get(this.API_URI + 'products.json?auth='+ token)
-        .map(
+      const token = this.authService.getToken();
+      this.http.get(this.API_URI + 'products.json?auth='+ token)
+      .map(
         (response: Response) => {
           const products: Product[] = response.json();
           console.log(response.json());
@@ -29,9 +27,10 @@ export class ProductService{
       )
       .subscribe(
         (products: Product[]) => {
-          this.setProducts(products);
+          this.products = products;
         }
       );
+      return this.products;
     }
 
     saveProductToDB(product: Product){
@@ -65,7 +64,7 @@ export class ProductService{
     }
 
     setProducts(products: Product[]){
-        this.product.products = products;
+      //  this.product.products = products;
     }
     getProducts(){
         return this.products.slice();

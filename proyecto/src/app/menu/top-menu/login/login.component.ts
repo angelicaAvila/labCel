@@ -1,7 +1,4 @@
 import {Component} from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
-import { RouterModule } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -11,10 +8,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  closeResult: string;
 
-  constructor(private router: Router,
-              private authService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
   }
