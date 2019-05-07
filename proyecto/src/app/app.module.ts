@@ -19,6 +19,7 @@ import { EditProductComponent } from './menu/edit-product/edit-product.component
 import { ProductService } from './shared/product.service';
 import { FrontPageComponent } from './dashboard/front-page/front-page.component';
 import { HomeComponent } from './dashboard/home/home.component';
+import { ProductComponent } from './dashboard/products/product/product/product.component';
 //import { userService } from './shared/user.service';
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HomeComponent } from './dashboard/home/home.component';
     SearchComponent,
     EditProductComponent,
     FrontPageComponent,
-    HomeComponent
+    HomeComponent,
+    ProductComponent
   ],
   imports: [
     NgbModule,
