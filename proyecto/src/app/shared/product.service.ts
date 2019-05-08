@@ -15,13 +15,13 @@ export class ProductService{
                 private authService: AuthService,
                 private route: Router){}
 
-    getProductsFromDB(data: String){
+    getProductsFromDB(){
       const token = this.authService.getToken();
       this.http.get(this.API_URI + 'products.json?auth='+ token)
       .map(
         (response: Response) => {
           const products: Product[] = response.json();
-          console.log(response.json());
+          console.log(products);
           return products;
         }
       )

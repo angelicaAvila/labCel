@@ -2,10 +2,10 @@
     <img src="assets\image.png">
     <p>{{product.nombre}}</p>
     <div>
-      <p class="productData">X unidades en stock</p>
-      <p class="productData">Precio Unitario: $9.99</p>
-      <p class="productData">Precion Mayoreo: $0.00</p>
-      <a routerLink = "/{{product.nombre}}/edit-product" >
+      <p class="productData">{{product.stock}} unidades en stock</p>
+      <p class="productData">Precio Unitario: {{product.precio}}</p>
+      <p class="productData">Precion Mayoreo: {{product.precioMayoreo}}</p>
+      <a (click) = "editProduct()">
           <button class="btn"><img src="assets\edit.png">
           </button>
       </a>

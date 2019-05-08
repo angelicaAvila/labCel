@@ -1,25 +1,22 @@
 <ul class = "menu">
   <ng-template [ngIf]="!authService.isAuthenticated()">
-    <li><a routerLink = "/login">
-      <button class = "btn button-link">Entrar
-      </button></a>
+    <li><a routerLink = "/login" 
+      class=" button-link">Entrar</a>
     </li>
   </ng-template>
-  <ng-template [ngIf]="authService.isAuthenticated()">
-    <li><a routerLink="/register-product">
-      <button class="btn button-link">New Product
-      </button></a>
+    <li routerLinkActive="active" >
+      <a routerLink="/register-product" 
+      class="button-link">New Product</a>
     </li>
-    <li><a routerLink="/register-user">
-      <button class="btn button-link">New User
-      </button></a>
+    <li routerLinkActive="active" >
+      <a routerLink="/register-user"
+      class="button-link">New User</a>
     </li>
-    <li><a routerLink="/home" style="position: absolute; right: 0">
-      <button class="btn button-link" 
-      (click)="onLogout()">Salir
-      </button></a>
+    <li><a style="position: absolute; right: 0"
+      class="btn button-link" 
+      (click)="onLogout()"
+      *ngIf="authService.isAuthenticated()">Salir</a>
     </li>
-  </ng-template>
 </ul>
 
 

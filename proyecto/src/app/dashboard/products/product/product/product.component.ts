@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/shared/product.model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -9,9 +10,15 @@ import { Product } from 'src/app/shared/product.model';
 export class ProductComponent implements OnInit {
   @Input() product: Product;
   @Input() index: number;
-  constructor() { }
+
+  constructor(private router: Router,
+              private route: ActivatedRoute){}
 
   ngOnInit() {
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
 }

@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   }
 
   search(){
-    this.productService.getProductsFromDB(this.text);
+    this.productService.getProductsFromDB();
   }
 
 }

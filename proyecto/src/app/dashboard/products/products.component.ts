@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/shared/product.model';
@@ -13,7 +13,9 @@ export class ProductsComponent implements OnInit {
      products: Product[];
      subscription: Subscription;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
   ngOnInit() {
     this.subscription = this.productService.productChanged
@@ -22,7 +24,11 @@ export class ProductsComponent implements OnInit {
         this.products = products;
       }
     );
-    this.products = this.productService.getProductsFromDB("");
+    this.products = this.productService.getProductsFromDB();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
