@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  onEditRecipe() {
+  onEditProduct() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
 

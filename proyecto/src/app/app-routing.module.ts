@@ -6,12 +6,13 @@ import { LoginComponent } from './menu/top-menu/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditProductComponent } from './menu/edit-product/edit-product.component'
 import { HomeComponent } from './dashboard/home/home.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
-  {path: 'register-product', component: RegisterProductComponent},
-  {path: 'register-user', component: RegisterUserComponent},
+  {path: 'register-product', component: RegisterProductComponent, canActivate: [AuthGuard]},
+  {path: 'register-user', component: RegisterUserComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: DashboardComponent},
+  {path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: ':nombre/edit-product', component: EditProductComponent},
   {path: '', component: HomeComponent}
 ];
@@ -22,4 +23,3 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents= []

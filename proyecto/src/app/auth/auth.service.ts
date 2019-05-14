@@ -20,7 +20,7 @@ export class AuthService {
       .then(
         response => {
           this.router.navigate(['/home']);
-          console.log("Authenticated");
+          console.log("Authenticated: ");
           firebase.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token

@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/shared/product.model';
+import { ProductManageService } from 'src/app/shared/productManage.service';
 
 @Component({
   selector: 'app-register-product',
@@ -11,14 +12,14 @@ import { Product } from 'src/app/shared/product.model';
 export class RegisterProductComponent implements OnInit {
   
   constructor(  private productService: ProductService, 
+                private productManage: ProductManageService,
                 private activateRoute: ActivatedRoute,
                 private route: Router) { 
   }
-  product: any = {
-    idProducto: 0,
+  product: Product = {
     nombre: '',
     stock: 0,
-    precioPublico: 0,
+    precio: 0,
     precioMayoreo: 0,
     costo: 0,
     categoria: '',
@@ -29,13 +30,16 @@ export class RegisterProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveProducts(){
+    this.productService.saveProductToDB();
+  }
+
   saveProduct(){
-    delete this.product.idProducto;
-    this.productService.saveProductToDB(this.product);
+    this.productManage.setProduct(this.product);
   }
 
   editItem(){
-    this.productService.updateItem(this.product.id,this.product).subscribe(
+    this.productService.updateItem(1,this.product).subscribe(
       res=>{
           this.route.navigate(['/home']);
       },

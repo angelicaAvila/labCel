@@ -1,7 +1,5 @@
 export class Product{
-     public id?: number;
      public nombre: string;
-     public descripcion: string;
      public stock: number;
      public categoria: string;
      public marca: string;
@@ -10,12 +8,11 @@ export class Product{
      public precioMayoreo: number;
      public imagen: string;
 
-     constructor(   nombre: string, descripcion: string, 
+     constructor(   nombre: string,
                     categoria: string, costo: number, 
                     precio: number, precioMayoreo: number,
                     marca: string, stock: number, imagen: string){
         this.nombre = nombre;
-        this.descripcion = descripcion;
         this.categoria = categoria;
         this.costo = costo;
         this.precio = precio;

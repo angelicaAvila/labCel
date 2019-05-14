@@ -7,15 +7,16 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  loadedFeature = 'product';
 
   ngOnInit(){
     firebase.initializeApp({
       apiKey: "AIzaSyAijg0Ocs0_L6SNDoIWUj8GqtcHwEefErc",
-        authDomain: "labcel-e45e9.firebaseapp.com"
+      authDomain: "labcel-e45e9.firebaseapp.com"
     });
   }
 
   onNavigate(feature: string){
-    
+    this.loadedFeature = feature;
   }
 }

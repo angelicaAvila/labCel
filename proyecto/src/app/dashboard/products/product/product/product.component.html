@@ -1,10 +1,10 @@
-<div >
+<div>
     <img src="assets\image.png">
-    <p>{{product.nombre}}</p>
+    <p>{{ product.nombre }}</p>
     <div>
-      <p class="productData">{{product.stock}} unidades en stock</p>
-      <p class="productData">Precio Unitario: {{product.precio}}</p>
-      <p class="productData">Precion Mayoreo: {{product.precioMayoreo}}</p>
+      <p class="productData">{{ product.stock }} unidades en stock</p>
+      <p class="productData">Precio Unitario: {{ product.precio }}</p>
+      <p class="productData">Precion Mayoreo: {{ product.precioMayoreo }}</p>
       <a (click) = "editProduct()">
           <button class="btn"><img src="assets\edit.png">
           </button>
@@ -12,4 +12,4 @@
       <button class="btn"><img src="assets\Minus.png"></button>
       <button class="btn"><img src="assets\shoppingcart.png"></button>
     </div>
-  </div>
+</div>
