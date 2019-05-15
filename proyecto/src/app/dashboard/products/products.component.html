@@ -9,8 +9,8 @@
   </div>
 </div>
 
-<div class = "col-lg-3 col-md-5 col-sm-5 item">
-    <app-product
+<div>
+    <app-product class = "col-lg-3 col-md-5 col-sm-5 col-xl-3 item"
       *ngFor = "let product of products; let i = index"
       [product] = "product"
       [index] = "i"></app-product>
