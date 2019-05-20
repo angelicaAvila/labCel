@@ -1,0 +1,13 @@
+img{
+    width:256px;
+    height: 256px;
+  }
+  
+  h1,h2{
+    color: #24598E;
+  }
+  
+  div{
+    text-align: center;
+    margin-top:10%; 
+  }

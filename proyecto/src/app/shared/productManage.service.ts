@@ -3,7 +3,6 @@ import { Subject } from 'rxjs/Subject';
 import { Product } from './product.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
 @Injectable()
 export class ProductManageService{
 
@@ -17,9 +16,7 @@ export class ProductManageService{
         )
     ];
 
-
-    constructor(private router: Router,
-                private route: ActivatedRoute){}
+    constructor(private router: Router){}
 
     setProducts(products: Product[]){
         this.products = products;

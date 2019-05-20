@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onNewProduct(){
-    this.router.navigate(['register-product']);
+    this.router.navigate(['/register-product']);
   }
 
 }

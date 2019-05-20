@@ -17,9 +17,8 @@ import { RegisterUserComponent } from './menu/register-user/register-user.compon
 import { EditProductComponent } from './menu/edit-product/edit-product.component';
 import { ProductService } from './shared/product.service';
 import { ProductManageService } from './shared/productManage.service';
-import { FrontPageComponent } from './dashboard/front-page/front-page.component';
 import { HomeComponent } from './dashboard/home/home.component';
-import { ProductComponent } from './dashboard/products/product/product/product.component';
+import { ProductComponent } from './dashboard/products/product/product.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { ProductComponent } from './dashboard/products/product/product/product.c
     RegisterProductComponent,
     RegisterUserComponent,
     EditProductComponent,
-    FrontPageComponent,
     HomeComponent,
     ProductsComponent,
     ProductComponent
@@ -43,7 +41,7 @@ import { ProductComponent } from './dashboard/products/product/product/product.c
     AppRoutingModule,
     FormsModule 
   ],
-  providers: [ProductService, AuthGuard, AuthService, ProductManageService],
+  providers: [DashboardComponent, ProductService, AuthGuard, AuthService, ProductManageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
