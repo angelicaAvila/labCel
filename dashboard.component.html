@@ -1,0 +1,19 @@
+<div>
+    <div class="col-lg-3 col-md-3 section">
+        <div id="cats" class="list-group">   
+            <a href="#" class="list-group-item active aRef" ><b>Categorias</b></a> 
+            <div [innerHTML]="myCategories">
+                
+            </div>
+        </div>
+        <div id="brands" class="list-group">   
+            <a href="#" class="list-group-item active aRef" ><b>Marcas</b></a> 
+            <div [innerHTML]="myBranches">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 section">
+        <app-products></app-products>
+    </div>
+</div>
