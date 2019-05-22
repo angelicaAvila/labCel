@@ -13,6 +13,8 @@ import { ProductManageService } from 'src/app/shared/productManage.service';
 export class ProductsComponent implements OnInit {
      products: Product[] = [];
      subscription: Subscription;
+     searchData: string;
+     currPage: number = 1;
 
   constructor(private productManageService: ProductManageService,
               private productService: ProductService,
@@ -30,13 +32,7 @@ export class ProductsComponent implements OnInit {
   }
 
   search(){
-    this.subscription = this.productManageService.productChanged
-      .subscribe(
-        (products: Product[]) => {
-          this.products = products;
-        }
-      );
-    this.productService.getProductsFromDB();
+
   }
 
   onNewProduct(){

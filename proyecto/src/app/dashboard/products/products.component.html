@@ -2,7 +2,7 @@
   <div class = "col-md-4 col-lg-4 section">
   </div>
   <div class = "col-md-8 col-lg-8 section">
-      <input type = "text" [(ngModel)] = text>
+      <input type = "text" [(ngModel)] = searchData >
       <button class = "btn" (click) = "search()">
         <img src = "assets/search-icon.png">
       </button>
@@ -11,8 +11,9 @@
 
 <div>
     <app-product class = "col-lg-3 col-md-5 col-sm-5 col-xl-3 item"
-      *ngFor = "let product of products; let i = index"
+      *ngFor = "let product of products | paginate:{itemsPerPage:3,currentPage:currPage}"
       [product] = "product"
       [index] = "i"></app-product>
 </div>
 
+<pagination-controls (pageChange) = "currPage = $event"></pagination-controls>
