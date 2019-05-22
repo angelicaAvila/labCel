@@ -31,6 +31,7 @@ export class ProductService{
         (products: Product[]) => {
           this.productManageService.setProducts(products);
           this.dashboard.showCategories(products);
+          this.dashboard.showBrands(products);
         }
       );
     }
