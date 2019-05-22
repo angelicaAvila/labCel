@@ -19,6 +19,7 @@ import { ProductService } from './shared/product.service';
 import { ProductManageService } from './shared/productManage.service';
 import { HomeComponent } from './dashboard/home/home.component';
 import { ProductComponent } from './dashboard/products/product/product.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductComponent } from './dashboard/products/product/product.component
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [DashboardComponent, ProductService, AuthGuard, AuthService, ProductManageService],
   bootstrap: [AppComponent]
