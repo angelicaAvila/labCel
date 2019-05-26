@@ -1,0 +1,30 @@
+<ul class = "menu">
+  <ng-template [ngIf]="!authService.isAuthenticated()">
+    <li><a routerLink = "/login" 
+      class=" button-link">Entrar</a>
+    </li>
+  </ng-template>
+    <li routerLinkActive="active" >
+      <a routerLink="/home" 
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">Home</a>
+    </li>
+    <li routerLinkActive="active" >
+      <a routerLink="/register-product" 
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">New Product</a>
+    </li>
+    <li routerLinkActive="active" >
+      <a routerLink="/register-user"
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">New User</a>
+    </li>
+    <li><a style="position: absolute; right: 0"
+      class="btn button-link" 
+      (click)="onLogout()"
+      *ngIf="authService.isAuthenticated()">Salir</a>
+    </li>
+</ul>
+
+
+

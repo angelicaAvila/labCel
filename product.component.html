@@ -1,0 +1,15 @@
+<div>
+    <img class="productData" height=150 src="{{product.imagen}}">
+    <p>{{ product.nombre }}</p>
+    <div>
+      <p class="productData">{{ product.stock }} unidades en stock</p>
+      <p class="productData">Precio Unitario: {{ product.precio }}</p>
+      <p class="productData">Precion Mayoreo: {{ product.precioMayoreo }}</p>
+      <a (click) = "onEditProduct()">
+          <button class="btn"><img src="assets\edit.png">
+          </button>
+      </a>
+      <button class="btn"><img src="assets\Minus.png"></button>
+      <button class="btn"><img src="assets\shoppingcart.png"></button>
+    </div>
+</div> 
