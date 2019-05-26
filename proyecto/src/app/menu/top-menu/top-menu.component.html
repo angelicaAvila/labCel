@@ -5,12 +5,19 @@
     </li>
   </ng-template>
     <li routerLinkActive="active" >
+      <a routerLink="/home" 
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">Home</a>
+    </li>
+    <li routerLinkActive="active" >
       <a routerLink="/register-product" 
-      class="button-link">New Product</a>
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">New Product</a>
     </li>
     <li routerLinkActive="active" >
       <a routerLink="/register-user"
-      class="button-link">New User</a>
+      class="button-link"
+      *ngIf="authService.isAuthenticated()">New User</a>
     </li>
     <li><a style="position: absolute; right: 0"
       class="btn button-link" 

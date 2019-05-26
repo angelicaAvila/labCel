@@ -1,3 +1,7 @@
 .item{
     display: inline-block;
 }
+
+.productName{
+    font-size: 14px;
+}

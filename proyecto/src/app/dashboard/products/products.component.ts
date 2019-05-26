@@ -15,6 +15,8 @@ export class ProductsComponent implements OnInit {
      subscription: Subscription;
      searchData: string;
      currPage: number = 1;
+     text;
+     flag:number =0;
 
   constructor(private productManageService: ProductManageService,
               private productService: ProductService,
@@ -26,13 +28,37 @@ export class ProductsComponent implements OnInit {
     .subscribe(
       (products: Product[]) => {
         this.products = products;
+        console.log(this.products);
       }
     );
   this.productService.getProductsFromDB();
   }
 
-  search(){
+  isNullOrWhiteSpace(str) {
+    return (!str || str.length === 0 || /^\s*$/.test(str))
+  }
 
+  search(){
+    var delArr =[];
+    if(!this.isNullOrWhiteSpace(this.text)){
+      this.text = this.text.toLowerCase();
+      for(let i = 0; i<this.products.length; i++){
+          if(!this.products[i].nombre.toLowerCase().includes(this.text))
+            delArr.push(i);
+      }
+      for(let i=delArr.length-1;i>=0;i--)
+        this.products.splice(delArr[i],1);
+    }
+
+    else{
+      this.subscription = this.productManageService.productChanged
+    .subscribe(
+      (products: Product[]) => {
+        this.products = products;
+      }
+    );  
+        this.productService.getProductsFromDB();
+      }
   }
 
   onNewProduct(){

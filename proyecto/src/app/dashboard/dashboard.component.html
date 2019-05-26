@@ -1,13 +1,13 @@
 <div>
-    <div class="col-lg-3 col-md-3 section">
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs section">
         <div class="list-group">   
             <a href="#" class="list-group-item active aRef" ><b>Categorias</b></a> 
-            <div [innerHTML]="myCategories">
+            <div [innerHTML] = "myCategories" id = "cats"> 
             </div>
         </div>
         <div class="list-group">   
             <a href="#" class="list-group-item active aRef" ><b>Marcas</b></a> 
-            <div [innerHTML]="myBranches">
+            <div class="menu-size" [innerHTML] = "myBrands" id = "brands">
             </div>
         </div>
     </div>

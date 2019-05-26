@@ -22,7 +22,6 @@ export class ProductManageService{
         this.products = products;
         if(this.products)
             this.productChanged.next(this.products);
-        this.router.navigate(['/home']);
     }
 
     setProduct(product: Product){

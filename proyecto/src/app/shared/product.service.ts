@@ -5,14 +5,12 @@ import 'rxjs/Rx';
 import { Product } from './product.model';
 import { AuthService } from '../auth/auth.service';
 import { ProductManageService } from './productManage.service';
-import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Injectable()
 export class ProductService{
     constructor(private http: Http, 
                 private authService: AuthService,
-                private productManageService: ProductManageService,
-                private dashboard: DashboardComponent){
+                private productManageService: ProductManageService){
     }
     
     API_URI = 'https://labcel-e45e9.firebaseio.com/';
@@ -30,8 +28,6 @@ export class ProductService{
       .subscribe(
         (products: Product[]) => {
           this.productManageService.setProducts(products);
-          this.dashboard.showCategories(products);
-          this.dashboard.showBrands(products);
         }
       );
     }
