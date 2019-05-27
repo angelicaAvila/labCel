@@ -49,6 +49,8 @@ export class RegisterProductComponent implements OnInit {
 
   saveProduct(){
     this.productManage.setProduct(this.product);
+    this.saveProducts();
+    this.route.navigate(['home']);
   }
 
   onSubmit() {
