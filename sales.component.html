@@ -1,0 +1,77 @@
+<div class="container form" >
+        <h1>Registro de venta</h1>
+        <div class="form-group"></div>
+        <table style="width:100%" >
+            <thead>
+                <tr>
+                    <th>Articulo</th>
+                    <th>Marca</th> 
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let sale of sales"> 
+                    <td>{{sale.nombre}}</td>
+                    <td>{{sale.marca}}</td> 
+                    <td><input type="number" [(ngModel)] = "sale.cantidad"></td>
+                    <td><input type="text" [(ngModel)] = "sale.precio" ></td>
+                    <td>{{sale.total}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{total}}</td>
+                </tr>
+            </tfoot>
+            
+        
+        </table>
+        <hr>
+        <button class=" btn btn-primary" (click) = "saveSales()">Salvar cambios</button>
+        <br>
+        <br>
+        <button class=" btn btn-primary" (click) = "download()">Reporte</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="uno">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Marca</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+         
+        </tr>
+      </thead>
+      <tbody id="body">
+    
+      </tbody>
+    </table>
+  </div>
