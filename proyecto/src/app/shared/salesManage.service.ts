@@ -38,6 +38,7 @@ export class SalesManageService{
     addSale(product: Product, mayoreo: number) {
         if(mayoreo > 0){
             var sale = new Sales(product.nombre,product.precioMayoreo,product.marca,1);
+            sale.tipoVenta = 'Mayoreo';
         }
         else{
             var sale = new Sales(product.nombre,product.precio,product.marca,1);

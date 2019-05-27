@@ -4,6 +4,9 @@ export class Sales{
     public cantidad: number;
     public precio: number;
     public total: number;
+    public vendedor: string;
+    public tienda: string;
+    public tipoVenta: string;
 
     constructor(   nombre: string, precio: number,
                    marca: string, cantidad: number ){
@@ -12,5 +15,8 @@ export class Sales{
        this.marca = marca;
        this.cantidad = cantidad;
        this.total = 0;
+       this.tipoVenta = "Menudeo";
+       this.vendedor = "vendedor 1";
+       this.tienda = "local A";
    }
 }

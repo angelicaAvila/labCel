@@ -4,24 +4,33 @@
         <table style="width:100%">
             <thead>
                 <tr>
+                    <th>Local</th>
+                    <th>Vendedor</th>
                     <th>Articulo</th>
                     <th>Marca</th> 
                     <th>Cantidad</th>
+                    <th>Tipo de venta</th>
                     <th>Precio</th>
                     <th>Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let sale of sales"> 
+                    <td><input type="text" [(ngModel)] = sale.tienda></td>
+                    <td><input type="text" [(ngModel)] = sale.vendedor></td>
                     <td>{{sale.nombre}}</td>
                     <td>{{sale.marca}}</td> 
                     <td><input type="number" [(ngModel)] = "sale.cantidad"></td>
+                    <td><input type="text" [(ngModel)] = "sale.tipoVenta"></td>
                     <td><input type="text" [(ngModel)] = "sale.precio" ></td>
                     <td>{{sale.total}}</td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

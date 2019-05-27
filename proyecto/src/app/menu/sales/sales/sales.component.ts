@@ -26,7 +26,10 @@ export class SalesComponent implements OnInit {
     precio: 0,
     marca: '',
     cantidad: 0,
-    total: 0
+    total: 0,
+    tienda: '',
+    vendedor: '',
+    tipoVenta: ''
   };
   total: number = 0;
 
