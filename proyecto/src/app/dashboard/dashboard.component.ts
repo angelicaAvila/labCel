@@ -75,5 +75,11 @@ export class DashboardComponent implements OnInit {
     }
    // displayItems(results);
   }
+  showElements(text:string,products: Product[]){
+    for(let i=0;i<products.length;i++){
+      if(products[i].categoria==text)
+        console.log(text);
+    }
+}
 
 }

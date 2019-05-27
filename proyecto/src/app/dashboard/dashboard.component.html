@@ -1,13 +1,13 @@
 <div>
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs section">
         <div class="list-group">   
-            <a href="#" class="list-group-item active aRef" ><b>Categorias</b></a> 
-            <div [innerHTML] = "myCategories" id = "cats"> 
+            <a href="#" (click)="isCollapsedCats = !isCollapsedCats"  class="list-group-item active aRef" ><b>Categorias</b></a> 
+            <div [ngbCollapse]="isCollapsedCats" id = "cats"> 
             </div>
         </div>
         <div class="list-group">   
-            <a href="#" class="list-group-item active aRef" ><b>Marcas</b></a> 
-            <div class="menu-size" [innerHTML] = "myBrands" id = "brands">
+            <a href="#" (click)="isCollapsedBrands=!isCollapsedBrands" class="list-group-item active aRef" ><b>Marcas</b></a> 
+            <div class="menu-size" [ngbCollapse]="isCollapsedBrands" id = "brands">
             </div>
         </div>
     </div>
