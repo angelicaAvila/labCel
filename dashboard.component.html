@@ -1,19 +1,18 @@
 <div>
     <div class="col-lg-2 col-md-2 section">
         <div class="list-group">   
-            <a href="#" class="list-group-item active aRef" ><b>Categorias</b></a> 
-            <div [innerHTML]="myCategories" id="cats">
-                
+            <button class="list-group-item active " (click)="isCollapsedCats = !isCollapsedCats" ><b>Categorias</b></button> 
+            <div id="cats" [ngbCollapse]="isCollapsedCats">
             </div>
         </div>
         <div class="list-group">   
-            <a href="#" class="list-group-item active aRef" ><b>Marcas</b></a> 
-            <div [innerHTML]="myBrands" id="brands">
+            <button class="list-group-item active " (click)="isCollapsedBrands=!isCollapsedBrands"><b>Marcas</b></button> 
+            <div id="brands" [ngbCollapse]="isCollapsedBrands">
 
             </div>
         </div>
     </div>
-    <div class="col-lg-8 col-md-8 section offset-lg-2 offset-lg-2-md-2">
+    <div class="col-lg-9 col-md-9 section">
         <app-products></app-products>
     </div>
 </div>
