@@ -1,0 +1,29 @@
+<div class="container form" >
+  <form class="form" >
+      <h1>Registro de venta</h1>
+      <button id="storeButton" class=" btn btn-primary final-button" (click)="saveSales()">Guardar venta</button>
+      <div class="form-group">
+          <label for="txtNombre">Nombre:</label>
+          <input type="text" class="form-control" id="txtNombre" name="txtNombre" [(ngModel)]="product.nombre"/>
+      </div>
+      <div class="form-group">
+          <label for="txtPrecioP">Precio:</label>
+          <input type="number" class="form-control" id="txtPrecioP" name="txtPrecioP" [(ngModel)]="product.precio"/>
+      </div>
+      <div class="form-group">
+          <label for="txtMarca">Marca:</label>
+          <input type="text" class="form-control" id="txtMarca" name="txtMarca" [(ngModel)]="product.marca"/>
+      </div>
+
+      <div class="form-group">
+          <label for="txtCantidad">Cantidad:</label>
+          <input type="number" class="form-control" id="txtCantidad" name="txtCantidad" [(ngModel)]="product.stock"/>
+      </div>
+
+      <div class = "form-group">
+          <label for="txtImagen">Imagen:</label>
+          <input type="url" class="form-control" id="txtImagen" name="txtImagen" [(ngModel)]="product.imagen"/>
+      </div>
+      <button id="saveButton" class=" btn btn-primary final-button" (click)="edit ? editItem() : saveSale()">Salvar producto</button>
+  </form>
+</div>

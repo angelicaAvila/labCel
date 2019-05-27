@@ -26,6 +26,7 @@ export class ProductManageService{
 
     setProduct(product: Product){
         this.products.push(product);
+        this.productChanged.next(this.products.slice());
     }
 
     getProducts(){
@@ -35,4 +36,13 @@ export class ProductManageService{
         return this.products[id];
     }
 
+    addProduct(product: Product) {
+        this.products.push(product);
+        this.productChanged.next(this.products.slice());
+    }
+    
+    updateProduct(index: number, newProduct: Product) {
+        this.products[index] = newProduct;
+        this.productChanged.next(this.products.slice());
+    }
 }

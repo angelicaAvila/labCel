@@ -1,8 +1,9 @@
 import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Product } from 'src/app/shared/product.model';
 import { ProductManageService } from 'src/app/shared/productManage.service';
+import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register-product',
@@ -16,6 +17,9 @@ export class RegisterProductComponent implements OnInit {
                 private activateRoute: ActivatedRoute,
                 private route: Router) { 
   }
+  id: number;
+  editMode = false;
+
   product: Product = {
     nombre: '',
     stock: 0,
@@ -28,6 +32,15 @@ export class RegisterProductComponent implements OnInit {
   };
 
   ngOnInit() {
+    this.activateRoute.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          console.log(this.id);
+          this.editMode = params['id'] != null;
+          this.initForm();
+        }
+      );
   }
 
   saveProducts(){
@@ -38,13 +51,23 @@ export class RegisterProductComponent implements OnInit {
     this.productManage.setProduct(this.product);
   }
 
-  editItem(){
-    this.productService.updateItem(1,this.product).subscribe(
-      res=>{
-          this.route.navigate(['/home']);
-      },
-      err=> console.log(err)
-    );  
+  onSubmit() {
+    if (this.editMode) {
+      this.productManage.updateProduct(this.id, this.product);
+    } else {
+      this.productManage.addProduct(this.product);
+    }
+    this.onCancel();
+  }
+
+  initForm() {
+    if (this.editMode) {
+      const product = this.productManage.getProduct(this.id);
+      console.log(product);
+    }
+  }
+
+  onCancel() {
   }
   
 }

@@ -14,12 +14,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './dashboard/products/products.component';
 import { RegisterProductComponent } from './menu/register-product/register-product.component';
 import { RegisterUserComponent } from './menu/register-user/register-user.component';
-import { EditProductComponent } from './menu/edit-product/edit-product.component';
 import { ProductService } from './shared/product.service';
 import { ProductManageService } from './shared/productManage.service';
 import { HomeComponent } from './dashboard/home/home.component';
 import { ProductComponent } from './dashboard/products/product/product.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SalesComponent } from './menu/sales/sales/sales.component';
+import { SalesService } from './shared/sales.service';
+import { SalesManageService } from './shared/salesManage.service';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     TopMenuComponent,
     RegisterProductComponent,
     RegisterUserComponent,
-    EditProductComponent,
     HomeComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    SalesComponent
   ],
   imports: [
     NgbModule,
@@ -43,7 +45,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [DashboardComponent, ProductService, AuthGuard, AuthService, ProductManageService],
+  providers: [DashboardComponent, 
+              ProductService, AuthGuard, 
+              AuthService, ProductManageService, 
+              SalesService, SalesManageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

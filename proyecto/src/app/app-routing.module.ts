@@ -4,6 +4,7 @@ import { RegisterProductComponent } from './menu/register-product/register-produ
 import { RegisterUserComponent } from './menu/register-user/register-user.component';
 import { LoginComponent } from './menu/top-menu/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SalesComponent } from './menu/sales/sales/sales.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { AuthGuard } from './auth/auth-guard.service';
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'edit-product', redirectTo: '/register-product'},
   {path: 'edit-user', redirectTo: '/register-user'},
+  {path: 'new-sale', component: SalesComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent}
 ];
 
