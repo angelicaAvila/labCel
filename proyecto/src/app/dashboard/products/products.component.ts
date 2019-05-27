@@ -28,7 +28,6 @@ export class ProductsComponent implements OnInit {
     .subscribe(
       (products: Product[]) => {
         this.products = products;
-        console.log(this.products);
       }
     );
   this.productService.getProductsFromDB();

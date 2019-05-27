@@ -1,29 +1,37 @@
 <div class="container form" >
-  <form class="form" >
-      <h1>Registro de venta</h1>
-      <button id="storeButton" class=" btn btn-primary final-button" (click)="saveSales()">Guardar venta</button>
-      <div class="form-group">
-          <label for="txtNombre">Nombre:</label>
-          <input type="text" class="form-control" id="txtNombre" name="txtNombre" [(ngModel)]="product.nombre"/>
-      </div>
-      <div class="form-group">
-          <label for="txtPrecioP">Precio:</label>
-          <input type="number" class="form-control" id="txtPrecioP" name="txtPrecioP" [(ngModel)]="product.precio"/>
-      </div>
-      <div class="form-group">
-          <label for="txtMarca">Marca:</label>
-          <input type="text" class="form-control" id="txtMarca" name="txtMarca" [(ngModel)]="product.marca"/>
-      </div>
-
-      <div class="form-group">
-          <label for="txtCantidad">Cantidad:</label>
-          <input type="number" class="form-control" id="txtCantidad" name="txtCantidad" [(ngModel)]="product.stock"/>
-      </div>
-
-      <div class = "form-group">
-          <label for="txtImagen">Imagen:</label>
-          <input type="url" class="form-control" id="txtImagen" name="txtImagen" [(ngModel)]="product.imagen"/>
-      </div>
-      <button id="saveButton" class=" btn btn-primary final-button" (click)="edit ? editItem() : saveSale()">Salvar producto</button>
-  </form>
+        <h1>Registro de venta</h1>
+        <div class="form-group"></div>
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Articulo</th>
+                    <th>Marca</th> 
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let sale of sales"> 
+                    <td>{{sale.nombre}}</td>
+                    <td>{{sale.marca}}</td> 
+                    <td><input type="number" [(ngModel)] = "sale.cantidad"></td>
+                    <td><input type="text" [(ngModel)] = "sale.precio" ></td>
+                    <td>{{sale.total}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{total}}</td>
+                </tr>
+            </tfoot>
+            
+        
+        </table>
+        <hr>
+        <button class=" btn btn-primary" (click) = "saveSales()">Salvar cambios</button>
 </div>

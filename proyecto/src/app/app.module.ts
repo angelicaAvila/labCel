@@ -8,7 +8,6 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './menu/top-menu/login/login.component';
-import { LogoutComponent } from './menu/top-menu/logout/logout.component';
 import { TopMenuComponent } from './menu/top-menu/top-menu.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './dashboard/products/products.component';
@@ -28,7 +27,6 @@ import { SalesManageService } from './shared/salesManage.service';
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    LogoutComponent,
     TopMenuComponent,
     RegisterProductComponent,
     RegisterUserComponent,
@@ -45,7 +43,7 @@ import { SalesManageService } from './shared/salesManage.service';
     FormsModule,
     NgxPaginationModule
   ],
-  providers: [DashboardComponent, 
+  providers: [DashboardComponent, ProductComponent,
               ProductService, AuthGuard, 
               AuthService, ProductManageService, 
               SalesService, SalesManageService],

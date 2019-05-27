@@ -1,17 +1,16 @@
 export class Sales{
     public nombre: string;
     public marca: string;
-    public mayoreo: number;
+    public cantidad: number;
     public precio: number;
-    public imagen: string;
+    public total: number;
 
     constructor(   nombre: string, precio: number,
-                   marca: string, imagen: string, 
-                   mayoreo: number){
+                   marca: string, cantidad: number ){
        this.nombre = nombre;
        this.precio = precio;
        this.marca = marca;
-       this.imagen = imagen;
-       this.mayoreo = mayoreo;
+       this.cantidad = cantidad;
+       this.total = 0;
    }
 }

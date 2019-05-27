@@ -2,43 +2,52 @@ import { Injectable } from '@angular/core';
 import { Sales } from './sales.model';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { Product } from './product.model';
+import { SalesService } from './sales.service';
 
 @Injectable()
 export class SalesManageService{
 
-    productChanged = new Subject<Sales[]>();
+    saleChanged = new Subject<Sales[]>();
     private sales: Sales[] = [
-        new Sales('', 0, '', '', 0 
+        new Sales('', 0, '', 0
         )
     ];
+    private product: Product;
 
     constructor(private router: Router){}
 
-    setProducts(sales: Sales[]){
+    setSales(sales: Sales[]){
         this.sales = sales;
         if(this.sales)
-            this.productChanged.next(this.sales);
+            this.saleChanged.next(this.sales);
     }
 
-    setProduct(sale: Sales){
+    setSale(sale: Sales){
         this.sales.push(sale);
-        this.productChanged.next(this.sales.slice());
+        this.saleChanged.next(this.sales.slice());
     }
 
-    getProducts(){
+    getSales(){
         return this.sales;
     }
-    getProduct(id: number){
+    getSale(id: number){
         return this.sales[id];
     }
 
-    addProduct(sale: Sales) {
+    addSale(product: Product, mayoreo: number) {
+        if(mayoreo > 0){
+            var sale = new Sales(product.nombre,product.precioMayoreo,product.marca,1);
+        }
+        else{
+            var sale = new Sales(product.nombre,product.precio,product.marca,1);
+        }
         this.sales.push(sale);
-        this.productChanged.next(this.sales.slice());
+        this.saleChanged.next(this.sales.slice());
     }
     
-    updateProduct(index: number, newSale: Sales) {
+    updateSale(index: number, newSale: Sales) {
         this.sales[index] = newSale;
-        this.productChanged.next(this.sales.slice());
+        this.saleChanged.next(this.sales.slice());
     }
 }

@@ -5,11 +5,24 @@
       <p class="productData">{{ product.stock }} unidades en stock</p>
       <p class="productData">Precio Unitario: {{ product.precio }}</p>
       <p class="productData">Precion Mayoreo: {{ product.precioMayoreo }}</p>
-      <a (click) = "onEditProduct()">
-          <button class="btn"><img src="assets\edit.png">
-          </button>
-      </a>
-      <button class="btn"><img src="assets\Minus.png"></button>
-      <button class="btn" (click) = "newSale()"><img src="assets\shoppingcart.png"></button>
+      <div style="height: 50px;">
+        <a (click) = "onEditProduct()">
+            <button class="btn"><img class = "icono" src="assets\edit.png">
+            </button>
+        </a>
+        <button class="btn"><img class = "icono" src="assets\Minus.png"></button>
+
+        <a (click) = "newSale()">
+            <button class="btn">
+              <img class = "icono" src="assets\shoppingcart.png">
+            </button>
+        </a>
+        <a (click) = "newWholesale()">
+            <button class="btn">
+              <img class = "icono" src="assets\mayoreo.png">
+            </button>
+        </a>
+      </div>
+      
     </div>
 </div>

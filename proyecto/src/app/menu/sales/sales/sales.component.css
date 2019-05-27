@@ -1,0 +1,15 @@
+td, th{
+    padding-left: 10px;
+    width: 125px;
+}
+
+table, th, td, tr {
+    border: 1px solid black;
+}
+
+thead {
+    color: #6EC761;
+    font-size: 12px;
+}
+tbody {color:#296AAB;}
+tfoot {color:#6EC761;}

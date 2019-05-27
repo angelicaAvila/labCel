@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'edit-product', redirectTo: '/register-product'},
   {path: 'edit-user', redirectTo: '/register-user'},
-  {path: 'new-sale', component: SalesComponent, canActivate: [AuthGuard]},
+  {path: 'sales', component: SalesComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent}
 ];
 

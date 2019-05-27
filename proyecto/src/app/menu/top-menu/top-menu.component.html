@@ -19,6 +19,14 @@
       class="button-link"
       *ngIf="authService.isAuthenticated()">New User</a>
     </li>
+    <li>
+      <button style="position: absolute; right: 30"
+      class="btn button-link" 
+      (click)="getSales()"
+      *ngIf="authService.isAuthenticated()">
+      <img src="./../../../assets/shoppingcart.png">
+    </button>
+    </li>
     <li><a style="position: absolute; right: 0"
       class="btn button-link" 
       (click)="onLogout()"

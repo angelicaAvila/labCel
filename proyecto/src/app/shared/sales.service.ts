@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { AuthService } from '../auth/auth.service';
-import { ProductManageService } from './productManage.service';
-import { Product } from './product.model';
+import { SalesManageService } from './salesManage.service';
+import { Sales } from './sales.model';
 
 @Injectable()
 export class SalesService{
     constructor(private http: Http, 
         private authService: AuthService,
-        private productManageService: ProductManageService){
+        private saleManageService: SalesManageService){
     }
 
     API_URI = 'https://labcel-e45e9.firebaseio.com/';
@@ -18,21 +18,21 @@ export class SalesService{
         this.http.get(this.API_URI + 'ventas.json?auth='+ token)
         .map(
             (response: Response) => {
-                const products: Product[] = response.json();
-                console.log(products);
-                return products;
+                const sales: Sales[] = response.json();
+                console.log(sales);
+                return sales;
             }
         )
         .subscribe(
-            (products: Product[]) => {
-            //    this.productManageService.setProducts(products);
+            (sales: Sales[]) => {
+                this.saleManageService.setSales(sales);
             }
         );
     }
 
     saveSalesToDB(){
         const token = this.authService.getToken();
-        return this.http.put(this.API_URI + 'ventas.json?auth=' + token, this.productManageService.getProducts())
+        return this.http.put(this.API_URI + 'ventas.json?auth=' + token, this.saleManageService.getSales())
         .subscribe(
         (response: Response)=>{
             console.log(response);
@@ -42,7 +42,7 @@ export class SalesService{
         );
     }
 
-    updateItem(id:string|number, updatedItem:Product){
+    updateItem(id:string|number, updatedItem:Sales){
      return this.http.put(`${this.API_URI}ventas/${id}`,updatedItem);
     }
 
