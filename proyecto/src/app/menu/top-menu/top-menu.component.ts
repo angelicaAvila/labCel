@@ -21,6 +21,7 @@ export class TopMenuComponent implements OnInit {
 
   onLogout(){
     this.authService.logout();
+    this.router.navigate(['']);
   }
 
 }
