@@ -3,8 +3,6 @@ import { Sales } from './sales.model';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { Product } from './product.model';
-import { SalesService } from './sales.service';
-
 @Injectable()
 export class SalesManageService{
 

@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/shared/product.model';
 import { Subscription } from 'rxjs';
 import { getTranslationForTemplate } from '@angular/core/src/render3/i18n';
+import * as jsPDF from 'jspdf'; 
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-sales',
@@ -70,4 +72,37 @@ export class SalesComponent implements OnInit {
     }
     return sales;
   }
+
+  public download()
+    {
+     // console.log(this.products[0]);
+     console.log(this.sales[0]);
+     var data = document.getElementById('uno');
+    var dataf = document.getElementById('body');
+    for(let i= 0;i<this.sales.length;i++){
+       var itemCode =  
+         `  
+        <tr>
+    <td>${this.sales[i].nombre}</td>
+    <td>${this.sales[i].precio}</td>
+    <td>${this.sales[i].marca}</td>
+    <td>${this.sales[i].cantidad}</td>
+    <td>${this.sales[i].total}</td>
+   
+          </tr>`;
+dataf.innerHTML+=itemCode;
+  
+    }
+    html2canvas(data).then(canvas => {
+      var imgWidth = 450; 
+      var pageHeight = 295;  
+      var imgHeight = canvas.height * imgWidth / canvas.width;
+      var heightLeft = imgHeight;
+      const contentDataURL = canvas.toDataURL('image/png')
+      let pdf = new jsPDF('p', 'mm', 'a4');
+      var position = 10;
+      pdf.addImage(contentDataURL, 'PNG', 2, position, imgWidth, imgHeight)
+      pdf.save('MYPdf.pdf')
+  });
+    }
 }

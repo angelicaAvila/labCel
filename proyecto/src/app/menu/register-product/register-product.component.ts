@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Product } from 'src/app/shared/product.model';
@@ -17,7 +17,7 @@ export class RegisterProductComponent implements OnInit {
                 private activateRoute: ActivatedRoute,
                 private route: Router) { 
   }
-  id: number;
+  @Input() id: number;
   editMode = false;
 
   product: Product = {
@@ -37,7 +37,7 @@ export class RegisterProductComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           console.log(this.id);
-          this.editMode = params['id'] != null;
+          this.editMode = params['index'] != null;
           this.initForm();
         }
       );
