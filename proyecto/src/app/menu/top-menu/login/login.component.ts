@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private authService: AuthService,
-              private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
   }

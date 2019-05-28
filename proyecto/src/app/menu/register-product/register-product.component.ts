@@ -17,19 +17,11 @@ export class RegisterProductComponent implements OnInit {
                 private activateRoute: ActivatedRoute,
                 private route: Router) { 
   }
-  @Input() id: number;
+  id: number;
+  productForm: FormGroup;
   editMode = false;
 
-  product: Product = {
-    nombre: '',
-    stock: 0,
-    precio: 0,
-    precioMayoreo: 0,
-    costo: 0,
-    categoria: '',
-    marca: '',
-    imagen: ''
-  };
+ 
 
   ngOnInit() {
     this.activateRoute.params
@@ -37,7 +29,7 @@ export class RegisterProductComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           console.log(this.id);
-          this.editMode = params['index'] != null;
+          this.editMode = params['id'] != null;
           this.initForm();
         }
       );
@@ -48,28 +40,60 @@ export class RegisterProductComponent implements OnInit {
   }
 
   saveProduct(){
-    this.productManage.setProduct(this.product);
+    this.productManage.setProduct(this.productForm.value);
     this.saveProducts();
     this.route.navigate(['home']);
   }
 
   onSubmit() {
     if (this.editMode) {
-      this.productManage.updateProduct(this.id, this.product);
+      this.productManage.updateProduct(this.id, this.productForm.value);
+      this.productService.saveProductToDB();
     } else {
-      this.productManage.addProduct(this.product);
+      this.productManage.addProduct(this.productForm.value);
+      this.productService.saveProductToDB();
     }
     this.onCancel();
   }
 
   initForm() {
+    let nombre = '';
+    let marca = '';
+    let precio = 0;
+    let precioMayoreo = 0;
+    let costo = 0;
+    let categoria = '';
+    let stock = 0;
+    let imagen = '';
+
     if (this.editMode) {
       const product = this.productManage.getProduct(this.id);
+      nombre = product.nombre;
+      marca = product.marca;
+      precio = product.precio;
+      costo = product.costo;
+      precioMayoreo = product.precioMayoreo;
+      stock = product.stock;
+      imagen = product.imagen;
+      categoria = product.categoria;
+
       console.log(product);
     }
+    this.productForm = new FormGroup({
+      'nombre': new FormControl(nombre, Validators.required),
+      'precio': new FormControl(precio, Validators.required),
+      'marca': new FormControl(marca, Validators.required),
+      'costo': new FormControl(costo, Validators.required),
+      'precioMayoreo': new FormControl(precioMayoreo, Validators.required),
+      'imagen': new FormControl(imagen, Validators.required),
+      'stock': new FormControl(stock, Validators.required),
+      'categoria': new FormControl(categoria, Validators.required),
+
+    })
   }
 
   onCancel() {
+    this.route.navigate(['home']);
   }
   
 }

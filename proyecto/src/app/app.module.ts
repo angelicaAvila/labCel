@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule} from './app-routing.module';
 import { AuthGuard } from './auth/auth-guard.service'; 
 import { AuthService } from './auth/auth.service';
@@ -41,6 +41,7 @@ import { SalesManageService } from './shared/salesManage.service';
     HttpModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxPaginationModule
   ],
   providers: [DashboardComponent, ProductComponent,
